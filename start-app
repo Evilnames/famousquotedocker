@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -d --link=mongodb -e NODE_PORT=8080 -e MONGO_HOST=mongodb -p 8080:8080 --name famousquote famousquote:latest
