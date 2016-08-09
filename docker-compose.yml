@@ -1,0 +1,12 @@
+version: '2'
+services:
+  dockernodeserver:
+    image: dockernodeserver:latest
+    build: .
+    ports:
+      - "8080:8080"
+  MongoDB:
+    image: sameersbn/mongodb:latest
+    ports:
+      - "27017:27017"
+    restart: always
