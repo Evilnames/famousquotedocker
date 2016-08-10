@@ -8,7 +8,9 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.13.3",
-    "mongodb": "^2.2.5"
+    "mongodb": "^2.2.5",
+    "mongoose": "^4.5.8"
   }
 }

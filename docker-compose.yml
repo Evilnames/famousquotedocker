@@ -5,7 +5,12 @@ services:
     build: .
     ports:
       - "8080:8080"
-  MongoDB:
+    environment:
+      - NODE_PORT=8080
+      - MONGO_HOST=mongodb
+    links:
+      - mongodb
+  mongodb:
     image: sameersbn/mongodb:latest
     ports:
       - "27017:27017"

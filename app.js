@@ -10,7 +10,7 @@ var db = [],
 		Author : String
 	}),
 	QuoteModel = mongoose.model('Quote', quoteSchema),
-	PORT = 8080;
+	PORT = process.env.NODE_PORT;
 
 //Mongoose promise fallback
 mongoose.Promise = require('bluebird');
@@ -20,7 +20,7 @@ web.use(bodyParser.urlencoded({ extended: false }))
 web.use(bodyParser.json())
 
 //Connect to the DB
-mongoose.connect('mongodb://localhost:27017/quote', (err, database) => {
+mongoose.connect('mongodb://'+process.env.MONGO_HOST+':27017/quote', (err, database) => {
 	web.listen(PORT, () => {
 		console.log('Turned On');
 	});
